@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/LibraryManagementSystem.iml" filepath="$PROJECT_DIR$/.idea/LibraryManagementSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RahulFlaskStudy/.idea/RahulFlaskStudy.iml" filepath="$PROJECT_DIR$/../RahulFlaskStudy/.idea/RahulFlaskStudy.iml" />
+    </modules>
+  </component>
+</project>
