@@ -11,10 +11,9 @@ import ssl
 
 
 class AdminApi:
-    # @token_required
+    @token_required
     @staticmethod
-    def add_admin():
-
+    def add_admin(current_user):
         token = request.headers['access_token']
         data= jwt.decode(token, key=app.config['SECRET_KEY'], algorithms='HS256')
         try:
@@ -65,8 +64,8 @@ class AdminApi:
                     return 'Admin deleted from database'
                 else:
                     return 'Admin does not found'
-        except:
-            return 'You are not authorized to access this'
+        except Exception as e:
+            raise e
 
     # @token_required
     # @staticmethod

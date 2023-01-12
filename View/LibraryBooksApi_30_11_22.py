@@ -69,12 +69,16 @@ class StoreBooksApi:
 
     @staticmethod
     @token_required
+
     def UpdateBook(current_user, book_id):
+        # breakpoint()
         token = request.headers['access_token']
         data = jwt.decode(token, key=app.config['SECRET_KEY'], algorithms='HS256')
+        # breakpoint()
         try:
+            book = Books.query.get(book_id)
             if data["ProfID"]:
-                book = Books.query.get(book_id)
+                # print(type(book))
                 new_name = request.form.get('Name')
                 new_author = request.form.get('Author')
                 new_edition = request.form.get('Edition')
@@ -83,81 +87,15 @@ class StoreBooksApi:
                     return "No fields are given to update"
                 elif new_name == '' or new_author == '' or new_edition == '' or new_price == '':
                     return " give values to all fields"
-                elif new_name == None and new_author == None and new_edition == None:
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_author == None and new_edition == None and new_price == None:
-                    book.Name = new_name
-                    db.session.commit()
-                    return "updated"
-                elif new_edition == None and new_price == None and new_name == None:
-                    book.Author = new_author
-                    db.session.commit()
-                    return "updated"
-                elif new_name == None and new_author == None and new_price == None:
-                    book.Edition = new_edition
-                    db.session.commit()
-                    return "updated"
-                elif new_name == None and new_author == None:
-                    book.Edition = new_edition
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_edition == None and new_price == None:
-                    book.Name = new_name
-                    book.Author = new_author
-                    db.session.commit()
-                    return "updated"
-                elif new_name == None and new_price == None:
-                    book.Edition = new_edition
-                    book.Author = new_author
-                    db.session.commit()
-                    return "updated"
-                elif new_edition == None and new_name == None:
-                    book.Author = new_author
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_price == None and new_author == None:
-                    book.Edition = new_edition
-                    book.Name = new_name
-                    db.session.commit()
-                    return "updated"
-                elif new_edition == None and new_author == None:
-                    book.Name = new_name
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_name == None:
-                    book.Edition = new_edition
-                    book.Author = new_author
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_edition == None:
-                    book.Name = new_name
-                    book.Author = new_author
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_author == None:
-                    book.Edition = new_edition
-                    book.Name = new_name
-                    book.Price = new_price
-                    db.session.commit()
-                    return "updated"
-                elif new_price == None:
-                    book.Edition = new_edition
-                    book.Author = new_author
-                    book.Name = new_name
-                    db.session.commit()
-                    return "updated"
                 else:
-                    book.Name = new_name
-                    book.Edition = new_edition
-                    book.Author = new_author
-                    book.Name = new_name
+                    if new_name:
+                        book.Name = new_name
+                    if new_author:
+                        book.Author = new_author
+                    if new_edition:
+                        book.Edition = new_edition
+                    if new_price:
+                        book.Price = new_price
                     db.session.commit()
                     return "updated"
         except:

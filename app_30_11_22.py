@@ -45,7 +45,7 @@ app.add_url_rule('/login', 'Login', view_func=Login, methods=['GET'])
 '''admin'''
 
 app.add_url_rule('/admin/add_admin', 'AdminApi.add_admin', view_func=AdminApi.add_admin, methods=['POST'])
-app.add_url_rule('/admin/delete_admin/<prof_id>', 'AdminApi.delete_admin', view_func=AdminApi.delete_admin, methods=['PUT'])
+app.add_url_rule('/admin/delete_admin/<prof_id>', 'AdminApi.delete_admin', view_func=AdminApi.delete_admin, methods=['DELETE'])
 
 '''password reset'''
 app.add_url_rule('/forgot_pass', 'Password.Forgot_password', view_func= Password.Forgot_password, methods=['GET'])
