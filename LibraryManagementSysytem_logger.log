@@ -1,0 +1,6 @@
+DEBUG 2023-01-20 19:18:08,891 - starting the server
+WARNING 2023-01-20 19:18:08,907 -  * Debugger is active!
+INFO 2023-01-20 19:18:08,907 -  * Debugger PIN: 468-582-187
+DEBUG 2023-01-20 19:18:11,851 - AllocateBook api is running
+DEBUG 2023-01-20 19:18:11,851 - entering in the authentication block
+DEBUG 2023-01-20 19:18:23,523 - student found

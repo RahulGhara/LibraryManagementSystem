@@ -5,6 +5,7 @@ from Models.Admin_16_12_22 import Admin
 import jwt
 from Models.Student_6_12_22 import Students
 from werkzeug.security import check_password_hash
+from logger_16_1_23 import logger
 
 
 def token_required(f):
@@ -34,24 +35,34 @@ def token_required(f):
 
 
 def Login():
+    logger.debug('Login api is running')
     auth = request.authorization
     if not auth or not auth.username or not auth.password:
         return 'Error while logging in'
     else:
+        logger.debug('fetching admin data')
         admin = Admin.query.filter_by(ProfID=auth.username).first()
         if not admin:
+            logger.debug('user is not admin')
+            logger.debug('fetching student data')
             student = Students.query.filter_by(UserID=auth.username).first()
             if not student:
+                logger.debug('user is not student')
+                logger.error('Credential error!')
                 return 'no vaild user found!!'
             elif check_password_hash(student.Password, auth.password):
                 data = {"UserID": student.UserID, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)}
                 token = jwt.encode(data, app.config['SECRET_KEY'])
+                logger.debug('token created successfully for student')
                 return token
             else:
-                return 'No user found'
+                logger.error('Password does not match')
+                return 'Password does not match'
         elif check_password_hash(admin.Password, auth.password):
             data = {"ProfID": admin.ProfID,"Email":admin.Email, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60)}
             token = jwt.encode(data, app.config['SECRET_KEY'])
+            logger.debug('token created successfully for admin')
             return token
         else:
-            return 'Login error!'
+            logger.error('Password does not match')
+            return 'Login error! Password does not match'
