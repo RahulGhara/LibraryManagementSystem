@@ -1,6 +1,7 @@
-DEBUG 2023-01-20 19:18:08,891 - starting the server
-WARNING 2023-01-20 19:18:08,907 -  * Debugger is active!
-INFO 2023-01-20 19:18:08,907 -  * Debugger PIN: 468-582-187
-DEBUG 2023-01-20 19:18:11,851 - AllocateBook api is running
-DEBUG 2023-01-20 19:18:11,851 - entering in the authentication block
-DEBUG 2023-01-20 19:18:23,523 - student found
+DEBUG 2023-01-25 18:58:05,144 - starting the server
+WARNING 2023-01-25 18:58:05,389 -  * Debugger is active!
+INFO 2023-01-25 18:58:05,410 -  * Debugger PIN: 403-758-916
+DEBUG 2023-01-25 18:58:05,552 - Login api is running
+DEBUG 2023-01-25 18:58:05,552 - fetching admin data
+DEBUG 2023-01-25 18:58:05,985 - token created successfully for admin
+INFO 2023-01-25 18:58:05,986 - 127.0.0.1 - - [25/Jan/2023 18:58:05] "GET /login HTTP/1.1" 200 -

@@ -1,8 +1,8 @@
-"""Creating admin table
+"""Create Admin Table
 
-Revision ID: f05ff86d6501
-Revises: c972155681c3
-Create Date: 2022-12-16 14:55:44.297276
+Revision ID: 9d4dd480a91c
+Revises: f94ccd8d9af2
+Create Date: 2023-01-25 16:08:20.416048
 
 """
 from alembic import op
@@ -11,8 +11,8 @@ from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
 # revision identifiers, used by Alembic.
-revision = 'f05ff86d6501'
-down_revision = 'c972155681c3'
+revision = '9d4dd480a91c'
+down_revision = 'f94ccd8d9af2'
 branch_labels = None
 depends_on = None
 

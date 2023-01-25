@@ -24,8 +24,8 @@ app.add_url_rule("/admin/update_record/<book_id>", "StoreBookApi.UpdateBook", vi
 app.add_url_rule("/admin/allocation/<roll_no>", "BookAllocationApi.AllocateBook",
                  view_func=BookAllocationApi.AllocateBook,
                  methods=['POST'])
-app.add_url_rule('/admin/allocation_status_update/<roll_no>', "BookAllocationApi.StatusUpdate",
-                 view_func=BookAllocationApi.StatusUpdate,
+app.add_url_rule('/admin/allocation_status_update/<roll_no>', "BookAllocationApi.BookReturn",
+                 view_func=BookAllocationApi.BookReturn,
                  methods=['PUT'])
 
 '''Student's data routes for admin'''

@@ -8,6 +8,7 @@ class Books(db.Model):
     Author = db.Column(db.String(50))
     Edition = db.Column(db.String(30))
     Price = db.Column(db.Integer)
+    BooksAvailable=db.Column(db.Integer)
     # BookAllocation= relationship('BookAllocation',backref='Book', lazy= True)
 
     def __init__(self, BookID, Name, Author, Edition, Price):

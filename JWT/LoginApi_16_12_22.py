@@ -59,6 +59,7 @@ def Login():
                 logger.error('Password does not match')
                 return 'Password does not match'
         elif check_password_hash(admin.Password, auth.password):
+        # elif admin.Password == auth.password:
             data = {"ProfID": admin.ProfID,"Email":admin.Email, 'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60)}
             token = jwt.encode(data, app.config['SECRET_KEY'])
             logger.debug('token created successfully for admin')

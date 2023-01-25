@@ -1,20 +1,18 @@
-"""create student table
+"""Create Students Table
 
-Revision ID: b8305c73d38f
-Revises: 1dea04131b96
-Create Date: 2022-12-05 14:51:50.963282
+Revision ID: c7914b02a741
+Revises: 90a7c059f8fa
+Create Date: 2023-01-25 15:53:40.874455
 
 """
-import uuid
-
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects.postgresql import UUID
+import uuid
 
 # revision identifiers, used by Alembic.
-revision = 'b8305c73d38f'
-# revision = None
-down_revision = '1dea04131b96'
+revision = 'c7914b02a741'
+down_revision = '90a7c059f8fa'
 branch_labels = None
 depends_on = None
 
@@ -23,7 +21,7 @@ def upgrade() -> None:
     op.create_table(
         "Student",
         sa.Column('StudentID', UUID(as_uuid=True), primary_key=True, default=uuid.uuid4),
-        sa.Column('RollNo', sa.Integer, nullable=False, unique=True),
+        sa.Column('RollNo', sa.String(100), nullable=False, unique=True),
         sa.Column('Name', sa.String(50), nullable=False),
         sa.Column('Department', sa.String(50), nullable=False),
         sa.Column('Semester', sa.String(30), nullable=False),
