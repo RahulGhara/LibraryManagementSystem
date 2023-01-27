@@ -13,11 +13,10 @@ class BookAllocation(db.Model):
     ReturnTime = db.Column(db.Time)
     BookAllocationStatus = db.Column(db.String(40))
 
-    def __init__(self, StudentBookAllocationID, StudentID, RollNo, BookID, IssueDate, IssueEndDate,ReturnTime,
+    def __init__(self, StudentBookAllocationID, StudentID, BookID, IssueDate, IssueEndDate,ReturnTime,
                  BookAllocationStatus):
         self.StudentBookAllocationID = StudentBookAllocationID
         self.StudentID = StudentID
-        self.RollNo = RollNo
         self.BookID = BookID
         self.IssueDate = IssueDate
         self.IssueEndDate = IssueEndDate

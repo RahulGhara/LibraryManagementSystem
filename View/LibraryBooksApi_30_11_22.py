@@ -1,3 +1,5 @@
+import uuid
+import re
 from flask import request
 from DbConnection_30_11_22 import db, app
 from Models.StoreBooks_30_11_22 import Books
@@ -15,27 +17,34 @@ class StoreBooksApi:
         try:
             logger.debug('This is in the authentication block now')
             if data["ProfID"]:
+                book_id_pattern = r'^BK\B[_]([A-Z]{1})[_][0-9]{3,5}$'
                 BookID = request.form.get('BookID')
                 Name = request.form.get('Name')
                 Author = request.form.get('Author')
                 Edition = request.form.get('Edition')
                 Price = request.form.get('Price')
-                new_book = Books(BookID, Name, Author, Edition, Price)
-                db.session.add(new_book)
-                db.session.commit()
-                logger.debug('New entry created')
-                return "New book is now available in library"
-        except Exception as e:
-            logger.error(e)
-            # return "Unauthorized Person"
-            raise e
+                BooksAvailable = request.form.get('BooksAvailable')
+                Bookuuid= uuid.uuid4()
+                logger.debug('Checking book_id pattern')
+                if re.match(book_id_pattern,BookID):
+                    new_book = Books(BookID, Name, Author, Edition, Price,BooksAvailable,Bookuuid)
+                    db.session.add(new_book)
+                    db.session.commit()
+                    logger.debug('New entry created')
+                    return "New book is now available in library"
+                else:
+                    logger.error('BookID format is not matching')
+                    return "BookID format is not matching"
+        except:
+            logger.error('Token is not authorized')
+            return "Unauthorized Person"
 
     @staticmethod
     def ViewBook(book_id):
         logger.debug('ViewBook api is running')
         book = Books.query.get(book_id)
         if book:
-            record = [book.BookID, book.Name, book.Author, book.Edition, book.Price]
+            record = [book.BookID, book.Name, book.Author, book.Edition, book.Price, book.BookUUID]
             return record
         else:
             logger.error('BookID is not present in the database')

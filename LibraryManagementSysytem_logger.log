@@ -1,7 +1,50 @@
-DEBUG 2023-01-25 18:58:05,144 - starting the server
-WARNING 2023-01-25 18:58:05,389 -  * Debugger is active!
-INFO 2023-01-25 18:58:05,410 -  * Debugger PIN: 403-758-916
-DEBUG 2023-01-25 18:58:05,552 - Login api is running
-DEBUG 2023-01-25 18:58:05,552 - fetching admin data
-DEBUG 2023-01-25 18:58:05,985 - token created successfully for admin
-INFO 2023-01-25 18:58:05,986 - 127.0.0.1 - - [25/Jan/2023 18:58:05] "GET /login HTTP/1.1" 200 -
+DEBUG 2023-01-27 18:55:42,550 - starting the server
+WARNING 2023-01-27 18:55:42,563 -  * Debugger is active!
+INFO 2023-01-27 18:55:42,570 -  * Debugger PIN: 403-758-916
+DEBUG 2023-01-27 18:55:44,963 - AllocateBook api is running
+DEBUG 2023-01-27 18:55:44,963 - entering in the authentication block
+DEBUG 2023-01-27 18:55:44,971 - student found
+DEBUG 2023-01-27 18:55:45,026 - Book allocated
+INFO 2023-01-27 18:55:45,027 - 127.0.0.1 - - [27/Jan/2023 18:55:45] "POST /admin/allocation/NIT_2018_0232 HTTP/1.1" 200 -
+DEBUG 2023-01-27 19:01:37,144 - AddStudent api is running
+DEBUG 2023-01-27 19:01:37,144 - This is in the authentication block now
+DEBUG 2023-01-27 19:01:37,146 - Checking roll_no pattern
+DEBUG 2023-01-27 19:01:37,146 - Checking password pattern
+DEBUG 2023-01-27 19:01:37,398 - validating email
+DEBUG 2023-01-27 19:01:37,398 - checking phn_no
+DEBUG 2023-01-27 19:01:37,402 - New entry created
+DEBUG 2023-01-27 19:01:40,583 - Mail sent successfully
+INFO 2023-01-27 19:01:40,587 - 127.0.0.1 - - [27/Jan/2023 19:01:40] "POST /admin/student_entry HTTP/1.1" 200 -
+DEBUG 2023-01-27 19:04:09,497 - AddStudent api is running
+DEBUG 2023-01-27 19:04:09,497 - This is in the authentication block now
+DEBUG 2023-01-27 19:04:09,499 - Checking roll_no pattern
+DEBUG 2023-01-27 19:04:09,499 - Checking password pattern
+DEBUG 2023-01-27 19:04:09,964 - validating email
+DEBUG 2023-01-27 19:04:09,964 - checking phn_no
+ERROR 2023-01-27 19:04:09,967 - user is not authorized
+INFO 2023-01-27 19:04:09,967 - 127.0.0.1 - - [27/Jan/2023 19:04:09] "POST /admin/student_entry HTTP/1.1" 200 -
+DEBUG 2023-01-27 19:05:16,124 - AddStudent api is running
+DEBUG 2023-01-27 19:05:16,124 - This is in the authentication block now
+DEBUG 2023-01-27 19:05:16,126 - Checking roll_no pattern
+DEBUG 2023-01-27 19:05:16,126 - Checking password pattern
+DEBUG 2023-01-27 19:05:16,408 - validating email
+DEBUG 2023-01-27 19:05:16,409 - checking phn_no
+DEBUG 2023-01-27 19:05:16,411 - New entry created
+DEBUG 2023-01-27 19:05:19,253 - Mail sent successfully
+INFO 2023-01-27 19:05:19,256 - 127.0.0.1 - - [27/Jan/2023 19:05:19] "POST /admin/student_entry HTTP/1.1" 200 -
+DEBUG 2023-01-27 19:07:19,684 - AllocateBook api is running
+DEBUG 2023-01-27 19:07:19,684 - entering in the authentication block
+DEBUG 2023-01-27 19:07:19,685 - student found
+DEBUG 2023-01-27 19:07:19,690 - Book allocated
+INFO 2023-01-27 19:07:19,690 - 127.0.0.1 - - [27/Jan/2023 19:07:19] "POST /admin/allocation/SKF_2018_0451 HTTP/1.1" 200 -
+INFO 2023-01-27 19:09:28,976 - 127.0.0.1 - - [27/Jan/2023 19:09:28] "[31m[1mPOST /admin/allocation_status_update/SKF_2018_0212 HTTP/1.1[0m" 405 -
+DEBUG 2023-01-27 19:09:47,849 - AllocateBook api is running
+DEBUG 2023-01-27 19:09:47,849 - entering in the authentication block
+DEBUG 2023-01-27 19:09:47,850 - student found
+WARNING 2023-01-27 19:09:47,853 - Book is not available in book store
+INFO 2023-01-27 19:09:47,854 - 127.0.0.1 - - [27/Jan/2023 19:09:47] "POST /admin/allocation/SKF_2018_0212 HTTP/1.1" 200 -
+DEBUG 2023-01-27 19:10:37,413 - StatusUpdate api is running
+DEBUG 2023-01-27 19:10:37,413 - In the authentication block
+DEBUG 2023-01-27 19:10:37,414 - student found
+DEBUG 2023-01-27 19:10:37,438 - The record is updated and deleted
+INFO 2023-01-27 19:10:37,439 - 127.0.0.1 - - [27/Jan/2023 19:10:37] "PUT /admin/allocation_status_update/NIT_2018_0232 HTTP/1.1" 200 -

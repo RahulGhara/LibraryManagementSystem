@@ -8,6 +8,7 @@ from JWT.LoginApi_16_12_22 import token_required
 import jwt
 from DbConnection_30_11_22 import app
 from logger_16_1_23 import logger
+import datetime
 
 
 class BookAllocationApi:
@@ -27,21 +28,23 @@ class BookAllocationApi:
                     student_book_allocation_id = uuid.uuid4()
                     student_id = student.StudentID
                     book = request.form.get('BookID')
-                    if Books.query.get(book):
+                    if Books.query.filter_by(BookID= book).first():
                         book_id = book
                     else:
                         logger.error('BookID not found')
                         return 'No book found'
-                    date = request.form.get('IssueDate')
-                    issue_end_date = request.form.get('IssueEndDate')
+                    issue_date = datetime.datetime.now()
+                    # date_to_add= 15
+                    issue_end_date = (datetime.date.today()+ datetime.timedelta(days=15))
+                    # return_time = (issue_date.strftime("%H:%M:%S"))
+                    return_time= None
                     BookAllocationStatus = request.form.get('Status')
                     # student_record= Students.query.filter_by(RollNo=roll_no).first()
                     book_store_record = Books.query.filter_by(BookID=book_id).first()
                     if book_store_record.BooksAvailable > 0:
                         book_store_record.BooksAvailable = book_store_record.BooksAvailable - 1
-                        new_entry = BookAllocation(student_book_allocation_id, student_id, roll_no, book_id, date,
-                                                   issue_end_date,
-                                                   BookAllocationStatus)
+                        new_entry = BookAllocation(student_book_allocation_id, student_id, book_id, issue_date,
+                                                   issue_end_date, return_time, BookAllocationStatus)
                         db.session.add(new_entry)
                         db.session.commit()
                         logger.debug('Book allocated')
@@ -78,6 +81,8 @@ class BookAllocationApi:
                             book_allocation_record.BookAllocationStatus = request.form.get('Status')
                             book_store_record = Books.query.filter_by(BookID=book).first()
                             book_store_record.BooksAvailable = book_store_record.BooksAvailable + 1
+                            book_allocation_record.ReturnTime = (datetime.datetime.now().strftime("%H:%M:%S"))
+                            # book_allocation_record.ReturnTime = datetime.datetime.now()
                             db.session.commit()
                             logger.debug('The record is updated and deleted')
                             return 'status updated'

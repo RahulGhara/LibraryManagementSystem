@@ -17,7 +17,7 @@ class Password:
         if admin_data:
             logger.info(f'creating forgot password link for {admin_data.ProfID}')
             print("Your UserID is", admin_data.ProfID)
-            return 'Your UserID is' + admin_data.ProfID + '\nclick the link to change your password ' + 'http://127.0.0.1:600/change_pass/' + admin_data.ProfID
+            return 'Your UserID is' + admin_data.ProfID + '\nclick the link to change your password ' + ' http://127.0.0.1:600/change_pass/' + admin_data.ProfID
         else:
             student_data = Students.query.filter_by(UserID=user_id).first()
             if student_data:
