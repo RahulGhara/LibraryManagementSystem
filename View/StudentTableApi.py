@@ -105,9 +105,12 @@ class StudentTableApi:
             logger.debug('This is in the authentication block now')
             if data['ProfID']:
                 student_data = Students.query.filter_by(RollNo=roll_no).first()
-                data = [student_data.StudentID, student_data.RollNo, student_data.Name, student_data.Department,
-                        student_data.Semester, student_data.PassoutYear]
-                return data
+                if student_data:
+                    data = [student_data.StudentID, student_data.RollNo, student_data.Name, student_data.Department,
+                            student_data.Semester, student_data.PassoutYear]
+                    return data
+                else:
+                    return 'No student found for this roll no'
         except:
             logger.error('Not authorized to access this')
             return 'You are not authorized to access this'

@@ -42,7 +42,7 @@ class StoreBooksApi:
     @staticmethod
     def ViewBook(book_id):
         logger.debug('ViewBook api is running')
-        book = Books.query.get(book_id)
+        book = Books.query.filter_by(BookID=book_id).first()
         if book:
             record = [book.BookID, book.Name, book.Author, book.Edition, book.Price, book.BookUUID]
             return record
@@ -76,7 +76,7 @@ class StoreBooksApi:
         try:
             logger.debug('This is in the authentication block now')
             if data["ProfID"]:
-                record = Books.query.get(book_id)
+                record = Books.query.filter_by(BookID=book_id).first()
                 if record:
                     db.session.delete(record)
                     db.session.commit()
@@ -99,7 +99,7 @@ class StoreBooksApi:
         # breakpoint()
         try:
             logger.debug('This is in the authentication block now')
-            book = Books.query.get(book_id)
+            book = Books.query.filter_by(BookID=book_id).first()
             if book:
                 if data["ProfID"]:
                     # print(type(book))

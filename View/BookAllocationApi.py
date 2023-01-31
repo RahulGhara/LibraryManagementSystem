@@ -38,7 +38,7 @@ class BookAllocationApi:
                     issue_end_date = (datetime.date.today()+ datetime.timedelta(days=15))
                     # return_time = (issue_date.strftime("%H:%M:%S"))
                     return_time= None
-                    BookAllocationStatus = request.form.get('Status')
+                    BookAllocationStatus = 'Issued'
                     # student_record= Students.query.filter_by(RollNo=roll_no).first()
                     book_store_record = Books.query.filter_by(BookID=book_id).first()
                     if book_store_record.BooksAvailable > 0:
@@ -78,7 +78,7 @@ class BookAllocationApi:
                                                                             BookID=book).first()
                     if book_allocation_record:
                         if book_allocation_record.BookAllocationStatus == 'Issued':
-                            book_allocation_record.BookAllocationStatus = request.form.get('Status')
+                            book_allocation_record.BookAllocationStatus = 'Returned'
                             book_store_record = Books.query.filter_by(BookID=book).first()
                             book_store_record.BooksAvailable = book_store_record.BooksAvailable + 1
                             book_allocation_record.ReturnTime = (datetime.datetime.now().strftime("%H:%M:%S"))
@@ -103,11 +103,11 @@ class BookAllocationApi:
         logger.debug('ViewDetails api is running')
         student = Students.query.filter_by(RollNo=roll_no).first()
         if student:
-            student_id = BookAllocation.query.filter_by(StudentID=student.StudentID).all()
+            student_book_allocation_record = BookAllocation.query.filter_by(StudentID=student.StudentID).all()
             list_of_records = []
-            for std in student_id:
+            for std in student_book_allocation_record:
                 record = {'Book_id': std.BookID, 'Issue_date': std.IssueDate,
-                          'Issue_end_date': std.IssueEndDate}
+                          'Issue_end_date': std.IssueEndDate, 'Book_allocation_status': std.BookAllocationStatus}
                 list_of_records.append(record)
             if list_of_records == []:
                 logger.warning('No book allocated')
