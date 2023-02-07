@@ -1,8 +1,7 @@
-DEBUG 2023-01-30 18:39:45,386 - starting the server
-WARNING 2023-01-30 18:39:45,409 -  * Debugger is active!
-INFO 2023-01-30 18:39:45,441 -  * Debugger PIN: 403-758-916
-DEBUG 2023-01-30 18:39:45,653 - ViewDetails api is running
-INFO 2023-01-30 18:39:45,852 - 127.0.0.1 - - [30/Jan/2023 18:39:45] "GET /student/view_data/NIT_2018_0232 HTTP/1.1" 200 -
-DEBUG 2023-01-30 18:40:16,250 - ViewDetails api is running
-WARNING 2023-01-30 18:40:16,253 - No book allocated
-INFO 2023-01-30 18:40:16,253 - 127.0.0.1 - - [30/Jan/2023 18:40:16] "GET /student/view_data/TIU_2015_0221 HTTP/1.1" 200 -
+DEBUG 2023-02-07 16:42:34,379 [app_30_11_22.py:57 -(<module>)] - starting the server
+WARNING 2023-02-07 16:42:34,393 [_internal.py:224 -(_log)] -  * Debugger is active!
+INFO 2023-02-07 16:42:34,399 [_internal.py:224 -(_log)] -  * Debugger PIN: 403-758-916
+DEBUG 2023-02-07 16:42:37,009 [LoginApi_16_12_22.py:38 -(Login)] - Login api is running
+DEBUG 2023-02-07 16:42:37,010 [LoginApi_16_12_22.py:43 -(Login)] - fetching admin data
+DEBUG 2023-02-07 16:42:37,347 [LoginApi_16_12_22.py:65 -(Login)] - token created successfully for admin
+INFO 2023-02-07 16:42:37,348 [_internal.py:224 -(_log)] - 127.0.0.1 - - [07/Feb/2023 16:42:37] "GET /login HTTP/1.1" 200 -
