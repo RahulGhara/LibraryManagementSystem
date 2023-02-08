@@ -20,12 +20,13 @@ class StudentTableApi:
         token = request.headers['access_token']
         data = jwt.decode(token, key=app.config['SECRET_KEY'], algorithms='HS256')
         try:
+            # breakpoint()
             logger.debug('This is in the authentication block now')
             if data['ProfID']:
                 roll_no_pattern= r'^[A-Z]{3,4}[_][0-9]{4}[_][0-9]{4,5}$'
                 pass_pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
                 email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-                phn_no_pattern= r'^[0-9]{10}'
+                phn_no_pattern= r'^[0-9]{10}$'
                 student_id = uuid.uuid4()
                 roll_no = request.form.get('RollNo')
                 name = request.form.get('Name')
@@ -121,15 +122,43 @@ class StudentTableApi:
         logger.debug('UpdateStudentData api is running')
         token = request.headers['access_token']
         data = jwt.decode(token, key=app.config['SECRET_KEY'], algorithms='HS256')
+        email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+        phn_no_pattern = r'^[0-9]{10}$'
+        changed_sem=request.form.get('Semester')
+        new_mail=request.form.get('Email')
+        new_phn_no= request.form.get('PhnNo')
         try:
             logger.debug('This is in the authentication block now')
             if data['ProfID']:
                 student_data = Students.query.filter_by(RollNo=roll_no).first()
                 if student_data:
-                    student_data.Semester = request.form.get('Semester')
+                    if changed_sem == None and new_mail == None and new_phn_no == None:
+                        logger.error('No fields given to update')
+                        return "No fields are given to update"
+                    if changed_sem =='' or new_mail== '' or new_phn_no == '':
+                        logger.error('some of the given fields are empty')
+                        return 'give values to all fields'
+                    if changed_sem:
+                        Students.query.filter_by(RollNo=roll_no).update({'Semester': changed_sem})
+                        logger.info('Semester updated')
+                    if new_mail:
+                        if re.match(email_pattern,new_mail):
+                            Students.query.filter_by(RollNo=roll_no).update({'Email': new_mail})
+                            logger.info('Email updated')
+                        else:
+                            logger.error('new mail pattern is not matching')
+                            return 'Enter valid email'
+                    if new_phn_no:
+                        if re.match(phn_no_pattern,new_phn_no):
+                            Students.query.filter_by(RollNo=roll_no).update({'PhnNo': new_phn_no})
+                            logger.info('PhnNo updated')
+                        else:
+                            logger.error('Phn no is not valid')
+                            return 'Enter valid 10 digit PhnNo'
+                    # student_data.Semester = request.form.get('Semester')
                     db.session.commit()
                     logger.debug('record updated')
-                    return 'Semester changed'
+                    return 'Updated'
                 else:
                     logger.error('No student found for this rollno')
                     return 'No student found'

@@ -1,7 +1,16 @@
-DEBUG 2023-02-07 16:42:34,379 [app_30_11_22.py:57 -(<module>)] - starting the server
-WARNING 2023-02-07 16:42:34,393 [_internal.py:224 -(_log)] -  * Debugger is active!
-INFO 2023-02-07 16:42:34,399 [_internal.py:224 -(_log)] -  * Debugger PIN: 403-758-916
-DEBUG 2023-02-07 16:42:37,009 [LoginApi_16_12_22.py:38 -(Login)] - Login api is running
-DEBUG 2023-02-07 16:42:37,010 [LoginApi_16_12_22.py:43 -(Login)] - fetching admin data
-DEBUG 2023-02-07 16:42:37,347 [LoginApi_16_12_22.py:65 -(Login)] - token created successfully for admin
-INFO 2023-02-07 16:42:37,348 [_internal.py:224 -(_log)] - 127.0.0.1 - - [07/Feb/2023 16:42:37] "GET /login HTTP/1.1" 200 -
+DEBUG 2023-02-08 15:13:31,304 [app_30_11_22.py:58 -(<module>)] - starting the server
+WARNING 2023-02-08 15:13:31,318 [_internal.py:224 -(_log)] -  * Debugger is active!
+INFO 2023-02-08 15:13:31,324 [_internal.py:224 -(_log)] -  * Debugger PIN: 403-758-916
+DEBUG 2023-02-08 15:16:32,839 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
+DEBUG 2023-02-08 15:16:32,841 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
+ERROR 2023-02-08 15:16:32,849 [StudentTableApi.py:149 -(UpdateStudentData)] - new mail pattern is not matching
+INFO 2023-02-08 15:16:32,850 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:16:32] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -
+DEBUG 2023-02-08 15:17:14,203 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
+DEBUG 2023-02-08 15:17:14,205 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
+ERROR 2023-02-08 15:17:14,206 [StudentTableApi.py:156 -(UpdateStudentData)] - Phn no is not valid
+INFO 2023-02-08 15:17:14,207 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:17:14] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -
+DEBUG 2023-02-08 15:17:46,534 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
+DEBUG 2023-02-08 15:17:46,536 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
+INFO 2023-02-08 15:17:46,540 [StudentTableApi.py:154 -(UpdateStudentData)] - PhnNo updated
+DEBUG 2023-02-08 15:17:46,541 [StudentTableApi.py:160 -(UpdateStudentData)] - record updated
+INFO 2023-02-08 15:17:46,542 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:17:46] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -

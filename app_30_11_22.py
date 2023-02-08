@@ -34,7 +34,7 @@ app.add_url_rule('/admin/student_entry', "StudentTableApi.AddStudent", view_func
 app.add_url_rule('/admin/student_data/<roll_no>', 'StudentTableApi.ViewStudentData',
                  view_func=StudentTableApi.ViewStudentData,
                  methods=['GET'])
-app.add_url_rule('/admin/student_semester_change/<roll_no>', "StudentTableApi.UpdateStudentData",
+app.add_url_rule('/admin/update_student_data/<roll_no>', "StudentTableApi.UpdateStudentData",
                  view_func=StudentTableApi.UpdateStudentData,
                  methods=['PUT'])
 
@@ -48,6 +48,7 @@ app.add_url_rule('/student/view_data/<roll_no>', 'BookAllocationApi.ViewDetails'
 app.add_url_rule('/admin/add_admin', 'AdminApi.add_admin', view_func=AdminApi.add_admin, methods=['POST'])
 app.add_url_rule('/admin/delete_admin/<prof_id>', 'AdminApi.delete_admin', view_func=AdminApi.delete_admin,
                  methods=['DELETE'])
+app.add_url_rule('/admin/update_admin_data/<prof_id>', 'AdminApi.update_admin', view_func= AdminApi.update_admin, methods=['PUT'])
 
 '''password reset'''
 app.add_url_rule('/forgot_pass', 'Password.Forgot_password', view_func=Password.Forgot_password, methods=['GET'])
