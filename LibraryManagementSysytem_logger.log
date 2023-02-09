@@ -1,16 +1,146 @@
-DEBUG 2023-02-08 15:13:31,304 [app_30_11_22.py:58 -(<module>)] - starting the server
-WARNING 2023-02-08 15:13:31,318 [_internal.py:224 -(_log)] -  * Debugger is active!
-INFO 2023-02-08 15:13:31,324 [_internal.py:224 -(_log)] -  * Debugger PIN: 403-758-916
-DEBUG 2023-02-08 15:16:32,839 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
-DEBUG 2023-02-08 15:16:32,841 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
-ERROR 2023-02-08 15:16:32,849 [StudentTableApi.py:149 -(UpdateStudentData)] - new mail pattern is not matching
-INFO 2023-02-08 15:16:32,850 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:16:32] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -
-DEBUG 2023-02-08 15:17:14,203 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
-DEBUG 2023-02-08 15:17:14,205 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
-ERROR 2023-02-08 15:17:14,206 [StudentTableApi.py:156 -(UpdateStudentData)] - Phn no is not valid
-INFO 2023-02-08 15:17:14,207 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:17:14] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -
-DEBUG 2023-02-08 15:17:46,534 [StudentTableApi.py:122 -(UpdateStudentData)] - UpdateStudentData api is running
-DEBUG 2023-02-08 15:17:46,536 [StudentTableApi.py:131 -(UpdateStudentData)] - This is in the authentication block now
-INFO 2023-02-08 15:17:46,540 [StudentTableApi.py:154 -(UpdateStudentData)] - PhnNo updated
-DEBUG 2023-02-08 15:17:46,541 [StudentTableApi.py:160 -(UpdateStudentData)] - record updated
-INFO 2023-02-08 15:17:46,542 [_internal.py:224 -(_log)] - 127.0.0.1 - - [08/Feb/2023 15:17:46] "PUT /admin/update_student_data/TIU_2015_0221 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:25:20,917 [app_30_11_22.py:56 -(<module>)] - starting the server
+WARNING 2023-02-09 14:25:20,996 [_internal.py:224 -(_log)] -  * Debugger is active!
+INFO 2023-02-09 14:25:21,037 [_internal.py:224 -(_log)] -  * Debugger PIN: 403-758-916
+INFO 2023-02-09 14:25:21,902 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:25:21] "[31m[1mPOST /login HTTP/1.1[0m" 405 -
+DEBUG 2023-02-09 14:25:25,876 [LoginApi_16_12_22.py:37 -(Login)] - Login api is running
+DEBUG 2023-02-09 14:25:25,876 [LoginApi_16_12_22.py:42 -(Login)] - fetching admin data
+DEBUG 2023-02-09 14:25:26,294 [LoginApi_16_12_22.py:64 -(Login)] - token created successfully for admin
+INFO 2023-02-09 14:25:26,295 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:25:26] "GET /login HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:25:49,792 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:25:49,793 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:25:49,796 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+ERROR 2023-02-09 14:25:49,797 [AdminApi_4_1_23.py:78 -(add_admin)] - Prof_id pattern not matched
+INFO 2023-02-09 14:25:49,798 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:25:49] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:29:54,399 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:29:54,399 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:29:54,401 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+ERROR 2023-02-09 14:29:54,401 [AdminApi_4_1_23.py:78 -(add_admin)] - Prof_id pattern not matched
+INFO 2023-02-09 14:29:54,402 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:29:54] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:30:10,909 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:30:10,909 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:30:10,911 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+DEBUG 2023-02-09 14:30:10,911 [AdminApi_4_1_23.py:39 -(add_admin)] - validating email
+DEBUG 2023-02-09 14:30:10,911 [AdminApi_4_1_23.py:41 -(add_admin)] - matching the password pattern
+ERROR 2023-02-09 14:30:10,911 [AdminApi_4_1_23.py:72 -(add_admin)] - Phn_no is not correct
+INFO 2023-02-09 14:30:10,912 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:30:10] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:30:17,825 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:30:17,825 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:30:17,827 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+DEBUG 2023-02-09 14:30:17,827 [AdminApi_4_1_23.py:39 -(add_admin)] - validating email
+DEBUG 2023-02-09 14:30:17,827 [AdminApi_4_1_23.py:41 -(add_admin)] - matching the password pattern
+DEBUG 2023-02-09 14:30:17,827 [AdminApi_4_1_23.py:43 -(add_admin)] - phn no is in valid format
+ERROR 2023-02-09 14:30:17,827 [AdminApi_4_1_23.py:69 -(add_admin)] - authentication error
+INFO 2023-02-09 14:30:17,828 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:30:17] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:30:25,649 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:30:25,649 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:30:25,651 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+DEBUG 2023-02-09 14:30:25,651 [AdminApi_4_1_23.py:39 -(add_admin)] - validating email
+DEBUG 2023-02-09 14:30:25,651 [AdminApi_4_1_23.py:41 -(add_admin)] - matching the password pattern
+DEBUG 2023-02-09 14:30:25,652 [AdminApi_4_1_23.py:43 -(add_admin)] - phn no is in valid format
+ERROR 2023-02-09 14:30:25,652 [AdminApi_4_1_23.py:69 -(add_admin)] - authentication error
+INFO 2023-02-09 14:30:25,652 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:30:25] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:30:38,930 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:30:38,930 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:30:38,932 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+DEBUG 2023-02-09 14:30:38,932 [AdminApi_4_1_23.py:39 -(add_admin)] - validating email
+DEBUG 2023-02-09 14:30:38,932 [AdminApi_4_1_23.py:41 -(add_admin)] - matching the password pattern
+DEBUG 2023-02-09 14:30:38,932 [AdminApi_4_1_23.py:43 -(add_admin)] - phn no is in valid format
+DEBUG 2023-02-09 14:30:39,183 [AdminApi_4_1_23.py:49 -(add_admin)] - New entry successful
+WARNING 2023-02-09 14:30:39,930 [AdminApi_4_1_23.py:63 -(add_admin)] - Logging in with email id and password
+DEBUG 2023-02-09 14:30:50,050 [AdminApi_4_1_23.py:66 -(add_admin)] - mail sent
+INFO 2023-02-09 14:30:50,313 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:30:50] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:32:42,035 [AdminApi_4_1_23.py:87 -(delete_admin)] - delete_admin api is running
+DEBUG 2023-02-09 14:32:42,035 [AdminApi_4_1_23.py:90 -(delete_admin)] - entering the authentication block
+INFO 2023-02-09 14:32:42,036 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:32:42] "DELETE /admin/delete_admin/PRF_10 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:32:50,523 [AdminApi_4_1_23.py:87 -(delete_admin)] - delete_admin api is running
+DEBUG 2023-02-09 14:32:50,525 [AdminApi_4_1_23.py:90 -(delete_admin)] - entering the authentication block
+INFO 2023-02-09 14:32:50,532 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:32:50] "DELETE /admin/delete_admin/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:33:11,634 [AdminApi_4_1_23.py:19 -(add_admin)] - add_admin api is running
+DEBUG 2023-02-09 14:33:11,634 [AdminApi_4_1_23.py:22 -(add_admin)] - entering in the authentication block
+DEBUG 2023-02-09 14:33:11,636 [AdminApi_4_1_23.py:37 -(add_admin)] - matching the ID pattern
+DEBUG 2023-02-09 14:33:11,636 [AdminApi_4_1_23.py:39 -(add_admin)] - validating email
+DEBUG 2023-02-09 14:33:11,636 [AdminApi_4_1_23.py:41 -(add_admin)] - matching the password pattern
+DEBUG 2023-02-09 14:33:11,636 [AdminApi_4_1_23.py:43 -(add_admin)] - phn no is in valid format
+DEBUG 2023-02-09 14:33:11,891 [AdminApi_4_1_23.py:49 -(add_admin)] - New entry successful
+WARNING 2023-02-09 14:33:12,436 [AdminApi_4_1_23.py:63 -(add_admin)] - Logging in with email id and password
+DEBUG 2023-02-09 14:33:14,577 [AdminApi_4_1_23.py:66 -(add_admin)] - mail sent
+INFO 2023-02-09 14:33:14,823 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:33:14] "POST /admin/add_admin HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:34:25,524 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:34:25,525 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:34:25,525 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+INFO 2023-02-09 14:34:25,528 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:34:25] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:34:46,028 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:34:46,030 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:34:46,030 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+INFO 2023-02-09 14:34:46,033 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:34:46] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+INFO 2023-02-09 14:35:54,619 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:35:54] "[31m[1mPUT /login HTTP/1.1[0m" 405 -
+DEBUG 2023-02-09 14:35:59,082 [LoginApi_16_12_22.py:37 -(Login)] - Login api is running
+DEBUG 2023-02-09 14:35:59,082 [LoginApi_16_12_22.py:42 -(Login)] - fetching admin data
+ERROR 2023-02-09 14:35:59,335 [LoginApi_16_12_22.py:67 -(Login)] - Password does not match
+INFO 2023-02-09 14:35:59,336 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:35:59] "GET /login HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:36:08,994 [LoginApi_16_12_22.py:37 -(Login)] - Login api is running
+DEBUG 2023-02-09 14:36:08,994 [LoginApi_16_12_22.py:42 -(Login)] - fetching admin data
+DEBUG 2023-02-09 14:36:09,258 [LoginApi_16_12_22.py:64 -(Login)] - token created successfully for admin
+INFO 2023-02-09 14:36:09,259 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:36:09] "GET /login HTTP/1.1" 200 -
+INFO 2023-02-09 14:36:42,513 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:36:42] "[31m[1mGET /admin/update_admin_data/PRF_103 HTTP/1.1[0m" 405 -
+DEBUG 2023-02-09 14:36:45,975 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:36:45,990 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+INFO 2023-02-09 14:36:45,991 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:36:45] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:36:54,567 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:36:54,568 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:36:54,568 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+ERROR 2023-02-09 14:36:54,570 [AdminApi_4_1_23.py:131 -(update_admin)] - Email pattern is not matched
+INFO 2023-02-09 14:36:54,571 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:36:54] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:37:03,477 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:37:03,479 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:37:03,479 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+DEBUG 2023-02-09 14:37:03,481 [AdminApi_4_1_23.py:128 -(update_admin)] - updating email
+INFO 2023-02-09 14:37:03,484 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:37:03] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:37:30,146 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:37:30,147 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:37:30,147 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+DEBUG 2023-02-09 14:37:30,149 [AdminApi_4_1_23.py:128 -(update_admin)] - updating email
+ERROR 2023-02-09 14:37:30,150 [AdminApi_4_1_23.py:138 -(update_admin)] - Phn no pattern is not matched
+INFO 2023-02-09 14:37:30,150 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:37:30] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:37:34,839 [AdminApi_4_1_23.py:107 -(update_admin)] - update_admin api is running
+DEBUG 2023-02-09 14:37:34,840 [AdminApi_4_1_23.py:115 -(update_admin)] - entering the authentication block
+DEBUG 2023-02-09 14:37:34,841 [AdminApi_4_1_23.py:124 -(update_admin)] - updating designation
+DEBUG 2023-02-09 14:37:34,842 [AdminApi_4_1_23.py:128 -(update_admin)] - updating email
+DEBUG 2023-02-09 14:37:34,843 [AdminApi_4_1_23.py:135 -(update_admin)] - updating PhnNo
+INFO 2023-02-09 14:37:34,845 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:37:34] "PUT /admin/update_admin_data/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:39:32,407 [Forgot_pass_6_1_23.py:13 -(Forgot_password)] - Forgot_Password api is running
+INFO 2023-02-09 14:39:32,412 [Forgot_pass_6_1_23.py:18 -(Forgot_password)] - creating forgot password link for PRF_103
+INFO 2023-02-09 14:39:32,425 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:39:32] "GET /forgot_pass HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:42:25,492 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+ERROR 2023-02-09 14:42:25,495 [Forgot_pass_6_1_23.py:64 -(Change_password)] - passwords are not matching
+INFO 2023-02-09 14:42:25,495 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:42:25] "PUT /change_pass/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:42:37,807 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+DEBUG 2023-02-09 14:42:37,810 [Forgot_pass_6_1_23.py:40 -(Change_password)] - password matched
+ERROR 2023-02-09 14:42:37,810 [Forgot_pass_6_1_23.py:61 -(Change_password)] - password pattern not matched
+INFO 2023-02-09 14:42:37,811 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:42:37] "PUT /change_pass/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:42:52,144 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+DEBUG 2023-02-09 14:42:52,147 [Forgot_pass_6_1_23.py:40 -(Change_password)] - password matched
+DEBUG 2023-02-09 14:42:52,147 [Forgot_pass_6_1_23.py:42 -(Change_password)] - password type matched
+DEBUG 2023-02-09 14:42:52,402 [Forgot_pass_6_1_23.py:47 -(Change_password)] - new password updated for admin
+INFO 2023-02-09 14:42:52,402 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:42:52] "PUT /change_pass/PRF_103 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:44:17,366 [Forgot_pass_6_1_23.py:13 -(Forgot_password)] - Forgot_Password api is running
+ERROR 2023-02-09 14:44:17,376 [Forgot_pass_6_1_23.py:28 -(Forgot_password)] - UserID is not valid
+INFO 2023-02-09 14:44:17,377 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:44:17] "GET /forgot_pass HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:44:21,971 [Forgot_pass_6_1_23.py:13 -(Forgot_password)] - Forgot_Password api is running
+INFO 2023-02-09 14:44:21,976 [Forgot_pass_6_1_23.py:24 -(Forgot_password)] - creating forgot password link for STD_JISU_2021_0032
+INFO 2023-02-09 14:44:21,978 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:44:21] "GET /forgot_pass HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:45:12,616 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+ERROR 2023-02-09 14:45:12,620 [Forgot_pass_6_1_23.py:64 -(Change_password)] - passwords are not matching
+INFO 2023-02-09 14:45:12,621 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:45:12] "PUT /change_pass/STD_JISU_2021_0032 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:45:22,865 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+DEBUG 2023-02-09 14:45:22,868 [Forgot_pass_6_1_23.py:40 -(Change_password)] - password matched
+ERROR 2023-02-09 14:45:22,869 [Forgot_pass_6_1_23.py:61 -(Change_password)] - password pattern not matched
+INFO 2023-02-09 14:45:22,869 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:45:22] "PUT /change_pass/STD_JISU_2021_0032 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:45:34,592 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+ERROR 2023-02-09 14:45:34,595 [Forgot_pass_6_1_23.py:64 -(Change_password)] - passwords are not matching
+INFO 2023-02-09 14:45:34,596 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:45:34] "PUT /change_pass/STD_JISU_2021_0032 HTTP/1.1" 200 -
+DEBUG 2023-02-09 14:45:43,583 [Forgot_pass_6_1_23.py:33 -(Change_password)] - Change_Password api is running
+DEBUG 2023-02-09 14:45:43,586 [Forgot_pass_6_1_23.py:40 -(Change_password)] - password matched
+DEBUG 2023-02-09 14:45:43,587 [Forgot_pass_6_1_23.py:42 -(Change_password)] - password type matched
+DEBUG 2023-02-09 14:45:43,940 [Forgot_pass_6_1_23.py:55 -(Change_password)] - new password updated for student
+INFO 2023-02-09 14:45:43,940 [_internal.py:224 -(_log)] - 127.0.0.1 - - [09/Feb/2023 14:45:43] "PUT /change_pass/STD_JISU_2021_0032 HTTP/1.1" 200 -

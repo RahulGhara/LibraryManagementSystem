@@ -20,13 +20,16 @@ app.add_url_rule("/admin/delete/<book_id>", "StoreBookApi.DeleteBook", view_func
 app.add_url_rule("/admin/update_record/<book_id>", "StoreBookApi.UpdateBook", view_func=StoreBooksApi.UpdateBook,
                  methods=['PUT'])
 
-'''Book allocation routes for admin'''
+'''Book allocation routes'''
 app.add_url_rule("/admin/allocation/<roll_no>", "BookAllocationApi.AllocateBook",
                  view_func=BookAllocationApi.AllocateBook,
                  methods=['POST'])
 app.add_url_rule('/admin/allocation_status_update/<roll_no>', "BookAllocationApi.BookReturn",
                  view_func=BookAllocationApi.BookReturn,
                  methods=['PUT'])
+app.add_url_rule('/student/view_data/<roll_no>', 'BookAllocationApi.ViewDetails',
+                 view_func=BookAllocationApi.ViewDetails,
+                 methods=['GET'])
 
 '''Student's data routes for admin'''
 app.add_url_rule('/admin/student_entry', "StudentTableApi.AddStudent", view_func=StudentTableApi.AddStudent,
@@ -38,12 +41,7 @@ app.add_url_rule('/admin/update_student_data/<roll_no>', "StudentTableApi.Update
                  view_func=StudentTableApi.UpdateStudentData,
                  methods=['PUT'])
 
-'''Viewing book allocation details for students'''
-app.add_url_rule('/student/view_data/<roll_no>', 'BookAllocationApi.ViewDetails',
-                 view_func=BookAllocationApi.ViewDetails,
-                 methods=['GET'])
-
-'''admin'''
+'''admin table routes'''
 
 app.add_url_rule('/admin/add_admin', 'AdminApi.add_admin', view_func=AdminApi.add_admin, methods=['POST'])
 app.add_url_rule('/admin/delete_admin/<prof_id>', 'AdminApi.delete_admin', view_func=AdminApi.delete_admin,

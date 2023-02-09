@@ -9,7 +9,6 @@ from logger_16_1_23 import logger
 
 
 def token_required(f):
-    # @wraps
     def decorated(*args, **kwargs):
         token = None
         current_user = None
@@ -28,7 +27,7 @@ def token_required(f):
                 student = Students.query.filter_by(UserID=data['UserID']).first()
                 current_user = student
         except:
-            return 'error!'
+            return 'Token not valid!'
         return f(current_user, *args, **kwargs)
 
     return decorated

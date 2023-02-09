@@ -28,16 +28,16 @@ class BookAllocationApi:
                     student_book_allocation_id = uuid.uuid4()
                     student_id = student.StudentID
                     book = request.form.get('BookID')
-                    if Books.query.filter_by(BookID= book).first():
+                    if Books.query.filter_by(BookID=book).first():
                         book_id = book
                     else:
                         logger.error('BookID not found')
                         return 'No book found'
                     issue_date = datetime.datetime.now()
                     # date_to_add= 15
-                    issue_end_date = (datetime.date.today()+ datetime.timedelta(days=15))
+                    issue_end_date = (datetime.date.today() + datetime.timedelta(days=15))
                     # return_time = (issue_date.strftime("%H:%M:%S"))
-                    return_time= None
+                    return_time = None
                     BookAllocationStatus = 'Issued'
                     # student_record= Students.query.filter_by(RollNo=roll_no).first()
                     book_store_record = Books.query.filter_by(BookID=book_id).first()

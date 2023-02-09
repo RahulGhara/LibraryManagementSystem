@@ -35,8 +35,6 @@ class StudentTableApi:
                 passout_year = request.form.get('PassoutYear')
                 user_id = 'STD_' + roll_no
                 std_pass = request.form.get('Password')
-                # encpass = fernet.encrypt(std_pass.encode())
-                # encpass = generate_password_hash(std_pass)
                 email = request.form.get('Email')
                 phn_no = request.form.get('PhnNo')
                 logger.debug('Checking roll_no pattern')
