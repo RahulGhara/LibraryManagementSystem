@@ -74,23 +74,27 @@ class BookAllocationApi:
                 if student:
                     logger.debug('student found')
                     book = request.form.get('BookID')
-                    book_allocation_record = BookAllocation.query.filter_by(StudentID=student.StudentID,
-                                                                            BookID=book).first()
-                    if book_allocation_record:
-                        if book_allocation_record.BookAllocationStatus == 'Issued':
-                            book_allocation_record.BookAllocationStatus = 'Returned'
-                            book_store_record = Books.query.filter_by(BookID=book).first()
-                            book_store_record.BooksAvailable = book_store_record.BooksAvailable + 1
-                            book_allocation_record.ReturnTime = (datetime.datetime.now().strftime("%H:%M:%S"))
-                            # book_allocation_record.ReturnTime = datetime.datetime.now()
-                            db.session.commit()
-                            logger.debug('The record is updated and deleted')
-                            return 'status updated'
+                    if Books.query.filter_by(BookID=book).first():
+                        book_allocation_record = BookAllocation.query.filter_by(StudentID=student.StudentID,
+                                                                                BookID=book).first()
+                        if book_allocation_record:
+                            if book_allocation_record.BookAllocationStatus == 'Issued':
+                                book_allocation_record.BookAllocationStatus = 'Returned'
+                                book_store_record = Books.query.filter_by(BookID=book).first()
+                                book_store_record.BooksAvailable = book_store_record.BooksAvailable + 1
+                                # book_allocation_record.ReturnTime = (datetime.datetime.now().strftime("%H:%M:%S"))
+                                book_allocation_record.ReturnTime = datetime.datetime.now()
+                                db.session.commit()
+                                logger.debug('The record is updated and deleted')
+                                return 'status updated'
+                            else:
+                                return 'Book is already returned'
                         else:
-                            return 'Book is already returned'
+                            logger.error('record not found')
+                            return 'Book is not allocated'
                     else:
-                        logger.error('record not found')
-                        return 'Book is not allocated'
+                        logger.error('Wrong BookID')
+                        return 'BookID not found'
                 else:
                     logger.error('No student found')
                     return 'No student found'

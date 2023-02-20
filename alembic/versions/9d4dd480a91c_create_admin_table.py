@@ -21,9 +21,9 @@ def upgrade() -> None:
     op.create_table(
         'Admin',
         sa.Column('ID',UUID(as_uuid=True),primary_key=True, default=uuid.uuid4),
-        sa.Column('Name', sa.String(100)),
-        sa.Column('ProfID',sa.String(50),unique=True),
-        sa.Column('Password', sa.String(180), unique=True),
+        sa.Column('Name', sa.String(100),nullable=False),
+        sa.Column('ProfID',sa.String(50),nullable=False,unique=True),
+        sa.Column('Password', sa.String(180),nullable=False, unique=True),
         sa.Column('Designation', sa.String(40), nullable=False),
         sa.Column('Email', sa.String(50),nullable=False),
         sa.Column('PhnNo', sa.BIGINT, nullable=False)

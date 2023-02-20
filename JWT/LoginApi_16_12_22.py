@@ -34,7 +34,7 @@ def token_required(f):
 
 
 def Login():
-    logger.debug('Login api is running')
+    logger.info('Login api is running')
     auth = request.authorization
     if not auth or not auth.username or not auth.password:
         return 'Error while logging in'

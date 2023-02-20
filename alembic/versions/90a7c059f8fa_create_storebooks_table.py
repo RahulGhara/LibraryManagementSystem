@@ -24,7 +24,7 @@ def upgrade() -> None:
         sa.Column('Author', sa.String(50)),
         sa.Column('Edition', sa.String(30)),
         sa.Column('Price', sa.Integer),
-        sa.Column('BooksAvailable', sa.Integer)
+        sa.Column('BooksAvailable', sa.Integer,nullable=False)
     )
 
 

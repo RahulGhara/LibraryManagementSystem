@@ -25,7 +25,7 @@ def upgrade() -> None:
         sa.Column('BookID', sa.String, nullable=False),
         sa.Column('IssueDate', sa.DateTime, nullable=False),
         sa.Column('IssueEndDate', sa.Date, nullable=False),
-        sa.Column('ReturnTime', sa.Time),
+        sa.Column('ReturnTime', sa.DateTime),
         sa.ForeignKeyConstraint(['StudentID'], ['Student.StudentID']),
         # sa.ForeignKeyConstraint(['BookID'], ['StoreBooks.BookID']),
     )

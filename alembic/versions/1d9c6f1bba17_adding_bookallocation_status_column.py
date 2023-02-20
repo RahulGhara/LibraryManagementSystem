@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade() -> None:
-    op.add_column('BookAllocationTable', sa.Column('BookAllocationStatus', sa.String(50)))
+    op.add_column('BookAllocationTable', sa.Column('BookAllocationStatus', sa.String(50),nullable=False))
 
 
 def downgrade() -> None:

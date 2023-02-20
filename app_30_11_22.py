@@ -53,5 +53,6 @@ app.add_url_rule('/forgot_pass', 'Password.Forgot_password', view_func=Password.
 app.add_url_rule('/change_pass/<user_id>', 'Password.Change_password', view_func=Password.Change_password,
                  methods=['PUT'])
 if __name__ == "__main__":
-    logger.debug('starting the server')
+    logger.info('starting the server')
+    # log.info('starting the server')
     app.run(debug=True, port=600)
